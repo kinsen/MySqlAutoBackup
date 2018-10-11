@@ -2,7 +2,8 @@
 Description=Back up db every day 4:00 am
 
 [Timer]
-OnUnitActiveSec=*-*-* 04:00:00
+OnCalendar=*-*-* 04:00:00
+Persistent=true
 Unit=dbbackup.service
 
 [Install]

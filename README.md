@@ -8,15 +8,19 @@ update username/password and database name
 ## 2. Config Service
 
 > 1. Update dbbackup.service , change ExecStart to absolute the path
-> 2. sudo mv dbbackup.service /usr/lib/systemd/system
+> 2. sudo cp dbbackup.service /etc/systemd/system/
 
 ## 3. Config Timer
 
-> 1. sudo mv dbbackup.timer /usr/lib/systemd/system
+> 1. sudo cp dbbackup.timer /etc/systemd/system/
 
 ## 4. Start Timer
 
 ```bash
+sudo systemctl daemon-reload
+sudo systemctl enable dbbackup.timer
 sudo systemctl start dbbackup.timer
+sudo systemctl status dbbackup.timer
+sudo systemctl show dbbackup.timer
 ```
 
