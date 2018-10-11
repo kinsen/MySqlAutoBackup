@@ -1,0 +1,5 @@
+[Unit]
+Description=DB Backup
+
+[Service]
+ExecStart=/bin/bash /path/db_bak.sh
